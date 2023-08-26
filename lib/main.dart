@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Pages/homepage.dart';
 import 'package:flutter_application_1/loginPage.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.cyan,
           fontFamily: GoogleFonts.lato().fontFamily,
         ),
+        debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light,
         darkTheme: ThemeData(
           brightness: Brightness.dark,
@@ -25,7 +27,8 @@ class MyApp extends StatelessWidget {
         //initialRoute: "/home",
         routes: {
           "/": (context) => LogInPage(),
-          "/login": (context) => Homepage(),
+          MyRoutes.homeRoute: (context) => Homepage(),
+          MyRoutes.loginRoute: (context) => LogInPage()
         });
   }
 }
